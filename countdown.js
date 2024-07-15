@@ -115,3 +115,12 @@ function productOfArray(arr) {
 let testArr = [1, 3, 5, 7]
 
 console.log(productOfArray(testArr));
+
+function recursiveRange(int) {
+  if (int === 0) return 0;
+  console.log(int)
+
+  return int += recursiveRange(int - 1)
+}
+
+console.log(recursiveRange(5));
