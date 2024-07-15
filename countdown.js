@@ -120,7 +120,16 @@ function recursiveRange(int) {
   if (int === 0) return 0;
   console.log(int)
 
-  return int += recursiveRange(int - 1)
+  return int += recursiveRange(int - 1);
 }
 
-console.log(recursiveRange(5));
+// console.log(recursiveRange(5));
+
+function fib(int) {
+  if (int === 0) return 'Can\'t use zero';
+  if (int === 1 || int === 2) return 1;
+  return fib(int - 1) + fib(int - 2);
+}
+
+console.log(fib(10));
+
