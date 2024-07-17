@@ -60,20 +60,22 @@ function binary(arr, value) {
   // console.log(`Start: ${start} || Middle: ${middle} || End: ${end}`);
 
   while (arr[middle] !== value && start <= end) {
-    if (value > arr[middle]) {
+    console.log(arr[middle])
+    if (value < arr[middle]) {
       end = middle - 1;
     } else {
       start = middle + 1;
     }
     middle = Math.ceil((start + end) / 2);
-    console.log(`Start: ${start} || Middle: ${middle} || End: ${end}`);
+    console.log(`Start: ${start} || Middle: ${middle} || End: ${end} || Vale: ${value}`);
   }
   if (arr[middle] === value) {
+    console.log(`Found array value: ${arr[middle]}`);
     console.log(`The value of ${value} was found in the array using binary search.`)
     return middle;
   } else {
+    console.log(`not found array value: ${arr[middle]}`);
     console.log(`The value of ${value} was NOT found in the array using binary search.`)
-
     return -1;
   }
 }
@@ -82,4 +84,4 @@ binary(array, 7);
 
 binary(array, 79);
 
-binary(array, 64)
+binary(array, 64);
