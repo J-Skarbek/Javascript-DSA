@@ -6,7 +6,11 @@ function bubbleSort(arr) {
   for (let i = arr.length ; i > 0 ; i--) {
     for (let j = 0; j < i - 1 ; j++) {
       if (arr[j] > arr[j + 1]) {
-        swap(arr, arr[j], arr[j + 1]);
+        // swap(arr, arr[j], arr[j + 1]); // Need to look into getting the helper function to also work
+        // should also get used to the es2015 version shown
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
       }
     }
   }
@@ -19,7 +23,8 @@ function swap(arr, indexOne, indexTwo) {
   let temp = arr[indexOne]; //create a temp variable and assign it the first index
   arr[indexOne] = arr[indexTwo]; // Overwrite the first index value with the second index value
   arr[indexTwo] = temp; //overwrite the second index value with the first index value that was stored into 'temp'
+  // return arr;
 }
 
 
-// bubbleSort(bubbleArray);
+bubbleSort(bubbleArray);
