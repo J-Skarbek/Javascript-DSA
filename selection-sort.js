@@ -37,6 +37,10 @@ function selectionSorter(arr) {
   for (let i = 0; i < arr.length; i++) {
     // set up the min value varaible to take the value of i for each iteration through the loop
     minValue = i;
+    //One thing to note here, is that the 'lowest' or 'minValue' variable isn't 
+    //holding the data of what is actually the value of any index in the array, so much
+    //as it servers as a pointer to point at the values (i.e. j will never equal 99, but if 99 is the lowest
+    // in an iteration at index 5 then j will equal 5 as well)
     for (let j = i + 1; j < arr.length; j++) {
       // This inner loop sets the value of j to be the value directly next, to the right,
       // of the value of i in the array
@@ -47,6 +51,9 @@ function selectionSorter(arr) {
         // we make the minvalue eqaul to the value of j
       }
     }
+
+    //this conditional works by preventing a swap operation if the value of lowest is
+    //already eqaul to the value of i
     if (i !== minValue) {
       // if the value of i is not equal to minValue
       let temp = arr[i];
