@@ -43,3 +43,4 @@ function insertionSorter(arr) {
 };
 
 insertionSorter(insertionArray);
+
