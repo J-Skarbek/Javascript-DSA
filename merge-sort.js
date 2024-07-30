@@ -3,6 +3,7 @@ console.log('******MERGESORT*****');
 const arrOne = [2,3,4,5,6,7,7,8,9,10];
 const arrTwo = [0,1,2];
 
+//Note: this is basically a helper function to the mergeSort() funciton
 function merge(arr, secondArr) {
   //This function assumes the two arrays passed in are already sorted;
 
@@ -59,9 +60,13 @@ function merge(arr, secondArr) {
 merge(arrOne, arrTwo);
 
 function mergeSort(arr) {
+  // This conditional check is the base case
   if (arr.length <= 1) return arr;
 
+  // Since a single array is passed into this function, we need to split it up
   const midpoint =  Math.floor(arr.length / 2);
+  // These next two values are created via recursively calling mergeSort again
+  // and with each call, we return a call to merge(firstHalf, lastHalf)
   const firstHalf = mergeSort(arr.slice(0, midpoint));
   const lastHalf = mergeSort(arr.slice(midpoint));
   console.log(firstHalf);
@@ -69,9 +74,6 @@ function mergeSort(arr) {
   console.log(merge(firstHalf, lastHalf));
   return merge(firstHalf, lastHalf);
 
-
-  // console.log(firstHalf);
-  // console.log(lastHalf);
 }
 
 mergeSort(arrOne);
